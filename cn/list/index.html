@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
               
               
             </a>
@@ -280,9 +280,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -406,11 +406,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
+              Estimated Reading Time <span class="post-count">3</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">493</span> In Total
+              Words <span class="post-count">641</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -493,19 +493,23 @@
 <p>动态数组线性表</p>
 <h2 id="Java">Java</h2>
 <h3 id="ArrayList">ArrayList</h3>
-<p>Resizable-array implementation of the <code>List</code> interface. Implements all optional list operations, and permits all elements, including <code>null</code>. In addition to implementing the <code>List</code> interface, this class provides methods to manipulate the size of the array that is used internally to store the list. (This class is roughly equivalent to <code>Vector</code>, except that it is unsynchronized.)</p>
+<p>Resizable-array implementation of the List interface. Implements all optional list operations, and permits all elements, including null. In addition to implementing the List interface, this class provides methods to manipulate the size of the array that is used internally to store the list. (This class is roughly equivalent to Vector, except that it is unsynchronized.)</p>
 <p>动态数组线性表</p>
 <h3 id="LinkedList">LinkedList</h3>
-<p>Doubly-linked list implementation of the <code>List</code> and <code>Deque</code> interfaces. Implements all optional list operations, and permits all elements (including <code>null</code>).</p>
+<p>Doubly-linked list implementation of the List and Deque interfaces. Implements all optional list operations, and permits all elements (including null).</p>
 <p>All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index.</p>
 <p>双向链表</p>
 <h3 id="Vector">Vector</h3>
-<p>The <code>Vector</code> class implements a growable array of objects. Like an array, it contains components that can be accessed using an integer index. However, the size of a <code>Vector</code> can grow or shrink as needed to accommodate adding and removing items after the <code>Vector</code> has been created.</p>
+<p>The Vector class implements a growable array of objects. Like an array, it contains components that can be accessed using an integer index. However, the size of a Vector can grow or shrink as needed to accommodate adding and removing items after the Vector has been created.</p>
 <p>动态数组</p>
 <h2 id="Python">Python</h2>
 <h3 id="List">List</h3>
 <p>A built-in Python sequence. Despite its name it is more akin to an array in other languages than to a linked list since access to elements is O(1).</p>
 <p>动态数组</p>
+<blockquote>
+<p>总结：之前用到比较多的主要是java里的arraylist和python里的list，虽然都打着list的旗号，但实际上都是线性存储结构，使用动态数组实现。</p>
+<p>针对于查找肯定使用线性较优，而对于增删使用链式较优，个人理解的话，只能说平时查找的频率远大于增删，并且查找的复杂程度也大于增删（增删的复杂本质来源于查找），并且实际情况下，增删大多在头部和尾部，使用动态数组完全是足够的</p>
+</blockquote>
 
 
         <hr>
