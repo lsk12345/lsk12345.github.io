@@ -244,21 +244,12 @@
 
           
           
+          
+          
           <li>
             <a href="/archive/">
               
               归档
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              分类
               
               
             </a>
@@ -277,12 +268,21 @@
           
           
           
-          
-          
           <li>
             <a href="/tags/">
               
               标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
               
               
             </a>
@@ -408,7 +408,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">98</span> In Total
+              Words <span class="post-count">107</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -470,12 +470,17 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="START"><a href="#START" class="headerlink" title="START!!!"></a>START!!!</h2><p>纪念一下博主正式使用博客的日子<br>在经过艰难的寻找后，最后选择了这么一个看起来还比较有意思的主题<br>顺便学习下md文本的编辑和git代码库管理相关的知识 org<br>以后将会发布分享一些技术学习的笔记以及日常的兴趣爱好之类的</p>
+        <h2 id="START"><a href="#START" class="headerlink" title="START!!!"></a>START!!!</h2><p>纪念一下博主正式使用博客的日子<br>在经过艰难的寻找后，最后选择了这么一个看起来还比较有意思的主题<br>顺便学习下md文本的编辑和git代码库管理相关的知识 org<br>以后将会发布分享一些技术学习的笔记以及日常的兴趣爱好之类的<br>新建文章：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;title&gt;</span><br></pre></td></tr></table></figure>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/ubuntu/" data-toggle="tooltip" data-placement="top" title="ubuntu虚拟机安装和测试命令行">&larr; Previous Post</a>
+          </li>
           
           
         </ul>
@@ -1174,5 +1179,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

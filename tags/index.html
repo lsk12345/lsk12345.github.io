@@ -244,21 +244,12 @@
 
           
           
+          
+          
           <li>
             <a href="/archive/">
               
               ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              CATEGORIES
               
               
             </a>
@@ -277,12 +268,21 @@
           
           
           
-          
-          
           <li>
             <a href="/tags/">
               
               TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -463,6 +463,10 @@
         
         <a href="#blog" title="blog" rel="1">blog</a>
         
+        <a href="#ubuntu" title="ubuntu" rel="1">ubuntu</a>
+        
+        <a href="#操作系统" title="操作系统" rel="1">操作系统</a>
+        
       </div>
 
       <!-- 标签列表 -->
@@ -483,6 +487,54 @@
             
             <h3 class="post-subtitle">
               记录下博客开张的日子
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="ubuntu">
+          <span class="tag-text">ubuntu</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/ubuntu/">
+            <h2 class="post-title">
+              ubuntu虚拟机安装和测试命令行
+              
+              -- cn
+              
+            </h2>
+            
+            <h3 class="post-subtitle">
+              操作系统实验1
+            </h3>
+            
+          </a>
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="操作系统">
+          <span class="tag-text">操作系统</span>
+        </span>
+        
+        <div class="post-preview">
+          <a href="/cn/ubuntu/">
+            <h2 class="post-title">
+              ubuntu虚拟机安装和测试命令行
+              
+              -- cn
+              
+            </h2>
+            
+            <h3 class="post-subtitle">
+              操作系统实验1
             </h3>
             
           </a>
@@ -963,5 +1015,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
