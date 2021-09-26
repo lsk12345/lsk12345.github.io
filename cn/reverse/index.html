@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/cn/World/">
+  <link rel="canonical" href="http://yoursite-url/cn/reverse/">
   <title>
     
-      Hello World!!! - 战斗系lsk
+      分治法解决逆序对问题 - 战斗系lsk
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -389,14 +389,16 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#blog" title="blog">blog</a>
+              <a class="tag" href="/tags/#算法分析与设计" title="算法分析与设计">算法分析与设计</a>
+              
+              <a class="tag" href="/tags/#实验报告" title="实验报告">实验报告</a>
               
             </div>
-            <h1>Hello World!!!</h1>
-            <h2 class="subheading">记录下博客开张的日子</h2>
+            <h1>分治法解决逆序对问题</h1>
+            <h2 class="subheading">算法分析与设计实验1</h2>
             <span class="meta">
               Posted by Last Aping on
-              2021-09-20
+              2021-09-26
             </span>
 
 
@@ -404,11 +406,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
+              Estimated Reading Time <span class="post-count">3</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">114</span> In Total
+              Words <span class="post-count">717</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -470,18 +472,34 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="START"><a href="#START" class="headerlink" title="START!!!"></a>START!!!</h2><p>纪念一下博主正式使用博客的日子<br>在经过艰难的寻找后，最后选择了这么一个看起来还比较有意思的主题<br>顺便学习下md文本的编辑和git代码库管理相关的知识 org<br>以后将会发布分享一些技术学习的笔记以及日常的兴趣爱好之类的<br>新建文章：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;title&gt;</span><br><span class="line">hexo n --lang cn &#x27;world&#x27;</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>基本算是归并排序的复习了，在原来基础上添加了一个微小的输出结果</p>
+</blockquote>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>采用分治法处理该题，将原序列分为两个子序列后，再对子序列分别做相同划分，</p>
+<p>最终的结果必定为<strong><em>\</em>单个元素**</strong>，此时<strong><em>\</em>无逆序对。**</strong></p>
+<p>向上回溯一层，即<strong><em>\</em>两个元素**</strong>（左右序列）时，若存在逆序对必然为<strong><em>\</em>一个在左序列一个在右序列**</strong></p>
+<p>再向上回溯一层，当存在<strong><em>\</em>大于两个元素**</strong>时，此时逆序对两元素除了<strong><em>\</em>分别存在于左右序列**</strong>，也有可能<strong><em>\</em>都存在于左序列或右序列。**</strong></p>
+<p>综上可得，可能的逆序对两个元素存在于三个位置：</p>
+<p>①均在左序列中</p>
+<p>②均在右序列中</p>
+<p>③分别左右序列中</p>
+<p>针对①②来说，通过递归一层一层向内寻找即可，即findReverse(l,(l+r)/2)和findReverse((l+r)/2+1,r)</p>
+<p>而针对③来说，若<strong><em>\</em>假设左右序列均为顺序列**</strong>的时候，只需要同时遍历左右序列，出现左序列元素i&gt;右序列元素j情况时，便说明i到左序列尾的所有元素和j都构成逆序列。</p>
+<p>为了达到左右序列均为顺序列，是需要排序的，但排序显然会有新的时间开销，这里就想到了归并排序，利用前面的①②过程对每一次回溯添加一个排序的过程即可。</p>
+<p>如此一来时间复杂度公式为：</p>
+<p><img src="wps3EF.tmp" alt="img"></p>
+<p>故时间复杂度为<strong>*\</strong>O(nlogn),*<em>**</em>相比于暴力求解时间复杂度<strong>*\</strong>O(n²)*<em>**</em>提升很多</p>
+<h1 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NUM 100</span></span><br><span class="line"><span class="keyword">int</span> a[NUM],temp[NUM],ans=<span class="number">0</span>,n;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> mid)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=l,j=mid,p=l;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;mid&amp;&amp;j&lt;=r)&#123;</span><br><span class="line">		<span class="comment">//左序列元素出现大于右序列元素的情况</span></span><br><span class="line">		<span class="keyword">if</span>(a[i]&gt;a[j])&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> s=i;s&lt;mid;s++) cout&lt;&lt;<span class="string">&quot;(&quot;</span>&lt;&lt;a[s]&lt;&lt;<span class="string">&quot;,&quot;</span>&lt;&lt;a[j]&lt;&lt;<span class="string">&quot;)&quot;</span>&lt;&lt;endl;</span><br><span class="line">			ans=ans+mid-i;</span><br><span class="line">			temp[p++]=a[j++];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			temp[p++]=a[i++];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;mid) temp[p++]=a[i++];<span class="comment">//左序列有剩余</span></span><br><span class="line">	<span class="keyword">while</span>(j&lt;=r) temp[p++]=a[j++];<span class="comment">//右序列有剩余</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> s=l;s&lt;=r;s++) a[s]=temp[s];<span class="comment">//排好序后赋值给原序列 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l&gt;=r) <span class="keyword">return</span>;<span class="comment">//递归出口：分解到仅有一个序列的时候</span></span><br><span class="line">	<span class="keyword">int</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">	<span class="built_in">merge_sort</span>(l,mid);<span class="comment">//左序列寻找逆序对并排序</span></span><br><span class="line">	<span class="built_in">merge_sort</span>(mid+<span class="number">1</span>,r);<span class="comment">//右序列寻找逆序对并排序</span></span><br><span class="line">	<span class="built_in">merge</span>(l,r,mid+<span class="number">1</span>);<span class="comment">//寻找跨左右序列的逆序对并排序</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) cin&gt;&gt;a[i];</span><br><span class="line">    <span class="built_in">merge_sort</span>(<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;一共&quot;</span>&lt;&lt;ans&lt;&lt;<span class="string">&quot;个逆序对&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/cn/ubuntu/" data-toggle="tooltip" data-placement="top" title="ubuntu虚拟机安装和测试命令行">&larr; Previous Post</a>
-          </li>
           
+          <li class="next">
+            <a href="/cn/english1/" data-toggle="tooltip" data-placement="top" title="六级刷分计划1">Next Post &rarr;</a>
+          </li>
           
         </ul>
 
@@ -529,7 +547,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Hello World!!!&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/World/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=分治法解决逆序对问题&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/reverse/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -564,7 +582,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Mon Sep 20 2021 20:34:40 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Sun Sep 26 2021 17:55:54 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -617,7 +635,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#START"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">START!!!</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">思路</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E4%BB%A3%E7%A0%81%E5%A6%82%E4%B8%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">代码如下</span></a></li></ol>
         
         </div>
       </aside>
@@ -640,7 +658,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#blog" title="blog">blog</a>
+            <a class="tag" href="/tags/#算法分析与设计" title="算法分析与设计">算法分析与设计</a>
+            
+            <a class="tag" href="/tags/#实验报告" title="实验报告">实验报告</a>
             
           </div>
         </section>
