@@ -139,7 +139,7 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/categories/">
+  <link rel="canonical" href="https://lsk12345.github.io/categories/">
   <title>
     
       Categories - 战斗系lsk
@@ -247,17 +247,6 @@
           
           
           <li>
-            <a href="/categories/">
-              
-              CATEGORIES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/archive/">
               
               ARCHIVES
@@ -269,9 +258,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/tags/">
               
-              ABOUT
+              TAGS
               
               
             </a>
@@ -280,9 +269,20 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/categories/">
               
-              TAGS
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
               
               
             </a>
@@ -465,9 +465,9 @@
         
         <a href="#日常" title="日常" rel="1">日常</a>
         
-        <a href="#课堂任务" title="课堂任务" rel="4">课堂任务</a>
+        <a href="#课外学习" title="课外学习" rel="3">课外学习</a>
         
-        <a href="#课外学习" title="课外学习" rel="1">课外学习</a>
+        <a href="#课堂任务" title="课堂任务" rel="4">课堂任务</a>
         
       </div>
 
@@ -503,8 +503,8 @@
       </div>
       
       <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="课堂任务">
-          <span class="tag-text">课堂任务</span>
+        <span class="fa fa-tag listing-seperator" id="课外学习">
+          <span class="tag-text">课外学习</span>
         </span>
         
         <!-- <li class="listing-item">
@@ -512,16 +512,16 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
         <div class="post-preview">
-          <a href="/cn/english1/">
+          <a href="/cn/interceptor/">
             <h2 class="post-title">
-              六级刷分计划1
+              springboot集成拦截器
               
               -- cn
               
             </h2>
             
             <h3 class="post-subtitle">
-              如题
+              通过拦截器进行session验证
             </h3>
             
           </a>
@@ -534,22 +534,51 @@
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
         <div class="post-preview">
-          <a href="/cn/reverse/">
+          <a href="/cn/permission/">
             <h2 class="post-title">
-              分治法解决逆序对问题
+              cookie、session、token对比
               
               -- cn
               
             </h2>
             
             <h3 class="post-subtitle">
-              算法分析与设计实验1
+              三种权限验证的区别
             </h3>
             
           </a>
           <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
         </div>
         <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/springboot/">
+            <h2 class="post-title">
+              springboot相关学习补档（持续更新）
+              
+              -- cn
+              
+            </h2>
+            
+            <h3 class="post-subtitle">
+              之前学习的springboot集成其他框架快速开发相关的知识
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="课堂任务">
+          <span class="tag-text">课堂任务</span>
+        </span>
         
         <!-- <li class="listing-item">
                   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
@@ -566,6 +595,28 @@
             
             <h3 class="post-subtitle">
               应数据结构的思考问题进行的资料查阅
+            </h3>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/cn/english1/">
+            <h2 class="post-title">
+              六级刷分计划1
+              
+              -- cn
+              
+            </h2>
+            
+            <h3 class="post-subtitle">
+              如题
             </h3>
             
           </a>
@@ -595,28 +646,21 @@
         </div>
         <hr>
         
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="课外学习">
-          <span class="tag-text">课外学习</span>
-        </span>
-        
         <!-- <li class="listing-item">
                   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </li> -->
         <div class="post-preview">
-          <a href="/cn/springboot/">
+          <a href="/cn/reverse/">
             <h2 class="post-title">
-              springboot相关学习补档（持续更新）
+              分治法解决逆序对问题
               
               -- cn
               
             </h2>
             
             <h3 class="post-subtitle">
-              之前学习的springboot集成其他框架快速开发相关的知识
+              算法分析与设计实验1
             </h3>
             
           </a>
@@ -764,7 +808,7 @@ https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
 <!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
 
 <!-- jquery.tagcloud.js -->
-<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://lsk12345.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
 start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
 
 
