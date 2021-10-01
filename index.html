@@ -244,19 +244,6 @@
 
           
           
-          
-          
-          <li>
-            <a href="/about/">
-              
-              ABOUT
-              
-              
-            </a>
-          </li>
-          
-          
-          
           <li>
             <a href="/archive/">
               
@@ -265,6 +252,8 @@
               
             </a>
           </li>
+          
+          
           
           
           
@@ -283,6 +272,17 @@
             <a href="/categories/">
               
               CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
               
               
             </a>
@@ -529,14 +529,14 @@
       如题
     </h3>
     <div class="post-content-preview">
-      ​	不知道从何说起，对于这么一个6年前的老游戏，也算是魂系老玩家补全倒数第二片拼图（还有个恶魔之魂）的一点点感想吧。
-​	通关具体时间忘记看了，包含dlc、迷宫啥的感觉大概也就50小时左右吧，通关了血缘并且白金（还差第二个结局成就后续补上，只能说自己手贱偷吃了三条脐带，现在得多跑一个周目了）
-​	
-​	也是谈一点我自己的理解，聊的东西不一定对，图一乐就好。
+      ​		不知道从何说起，对于这么一个6年前的老游戏，也算是魂系老玩家补全倒数第二片拼图（还有个恶魔之魂）的一点点感想吧。
+​		通关具体时间忘记看了，包含dlc、迷宫啥的感觉大概也就50小时左右吧，通关了并且白金（还差第二个结局成就后续补上，只能说自己手贱偷吃了三条脐带，现在得多跑一个周目了）
+​		
+​		也是谈一点我自己的理解，聊的东西不一定对，图一乐就好。
 
 难度
 
-​	魂系游戏永远抛不开受......
+​		魂系游戏永远抛......
     </div>
   </a>
   
@@ -908,19 +908,19 @@ cat
     
     
     
-    <a href="/tags/#数据结构" title="数据结构" rel="1">数据结构</a>
-    
-    
-    
-    <a href="/tags/#算法设计" title="算法设计" rel="1">算法设计</a>
-    
-    
-    
     <a href="/tags/#后端" title="后端" rel="3">后端</a>
     
     
     
     <a href="/tags/#权限验证" title="权限验证" rel="2">权限验证</a>
+    
+    
+    
+    <a href="/tags/#数据结构" title="数据结构" rel="1">数据结构</a>
+    
+    
+    
+    <a href="/tags/#算法设计" title="算法设计" rel="1">算法设计</a>
     
     
     
@@ -1548,5 +1548,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
