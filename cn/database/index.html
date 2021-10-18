@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://lsk12345.github.io/cn/jwt/">
+  <link rel="canonical" href="https://lsk12345.github.io/cn/database/">
   <title>
     
-      jwt-token相关 - 战斗系lsk
+      类图对应建立数据库的一点心得 - 战斗系lsk
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -389,16 +389,16 @@
           <div class="post-heading">
             <div class="tags">
               
+              <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
+              
               <a class="tag" href="/tags/#后端" title="后端">后端</a>
               
-              <a class="tag" href="/tags/#权限验证" title="权限验证">权限验证</a>
-              
             </div>
-            <h1>jwt-token相关</h1>
-            <h2 class="subheading">通过jwt实现token验证用户身份相关知识</h2>
+            <h1>类图对应建立数据库的一点心得</h1>
+            <h2 class="subheading">就简单项目建库使用时的一点问题</h2>
             <span class="meta">
               Posted by Last Aping on
-              2021-09-28
+              2021-10-19
             </span>
 
 
@@ -410,7 +410,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">382</span> In Total
+              Words <span class="post-count">498</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -472,35 +472,27 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p>​	前端通过Web表单将自己的用户名和密码发送到后端的接口，这一过程一般是一个HTTP POST请求。建议的方式是通过SSL加密传输(https协议)。</p>
-<p>​	后端核对用户名和密码后，将用户的id等信息作为JWTpayload(负载)，将其与头部分别进行Base64编码拼接后签名，形成一个JWT(Token)。形成的JWT就是一个形同111.zzz.xxx的字符串(head.payload.signature)</p>
-<p>​	后端将JWT字符串作为登陆成功的返回结果返回给前端，前端可以将返回的结果保存在本地或服务器上，退出登录时前端删除保存的JWT即可。</p>
-<p>​	前端在每次请求时将JWT放入HTTP Header中的Authorization位。(即token放入header)</p>
-<p>​	后端检查是否存在。若存在检验JWT的有效性。例如，检查签名是否正确；检查签名是否过期；检查Token的接收方是否是自己（可选）</p>
-<p>​	验证通过后后端使用JWT中包含的用户信息进行其他逻辑操作，返回相应结果</p>
-<p>1.标头（Header）：令牌类型（JWT）和所使用的签名算法</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;alg&quot;</span>:<span class="string">&quot;HS256&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;typ&quot;</span>:<span class="string">&quot;JWT&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.有效负载（payload）：有关实体和其他数据的声明</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;sub&quot;</span>:<span class="number">123456789</span>,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;John Doe&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;admin&quot;</span>:<span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>3.签名（signature）:保证JWT没有被篡改过</p>
-<p>实际构造：</p>
-<p><img src="/cn/jwt/jwt1.png" alt="img"></p>
-<p>编码之后：</p>
-<p><img src="/cn/jwt/jwt2.png" alt="img"></p>
-<p>使用jwt封装成拦截器并集成入springboot</p>
+        <p>通用类empty的限定设置(id主键、time默认为当前时间、is_delete默认为0)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `<span class="keyword">empty</span>`  (</span><br><span class="line">  `id` <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  `create_time` <span class="type">timestamp</span>(<span class="number">0</span>) <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span>,</span><br><span class="line">  `update_time` <span class="type">timestamp</span>(<span class="number">0</span>) <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span>,</span><br><span class="line">  `create_by` <span class="type">varchar</span>(<span class="number">24</span>) <span class="type">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `update_by` <span class="type">varchar</span>(<span class="number">24</span>) <span class="type">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `is_delete` tinyint(<span class="number">4</span>) <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`) <span class="keyword">USING</span> BTREE</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>1.不同角色对user不应当继承，而是扩充字段的形式</p>
+<p>2.使用字典的时候建议冗余建库，影响后续查表的sql书写效率和访问效率（要有字典id字段也要有字典含义字段）尽量做到直接使用mybatis自带的查表功能。</p>
+<p>3.mybatis-generator自动生成model和mapper层的时候不易修改，每次修改数据库结构的时候需要把原来的文件覆盖掉，暂无较好解决方案。</p>
+<p>方案1 添加empty_field字段，但主要适合实意字段，不好做复杂逻辑（不记得是什么含义）</p>
+<p>方案2 尽量把所有sql语句写在同一个mapper.xml中，但是带来的问题就是不好管理service层需要调用的查表方法</p>
+<p>4.返回list的应该添加page和begin来分页，注意is_delete要=0，后续可以考虑封装，而不是写在sql语句里，出现多个返回结果要注意distinct</p>
+<p>5.删除的时候应当注意将依赖该表的表里的数据全部删掉，这样连表的时候只需要判断最上层的is_delete了</p>
+<p>6.写mapper文件的时候不要返回Object，写具体的List&lt;Map&lt;String,Object&gt;&gt;</p>
+<p>待解决的问题：</p>
+<p>传入json格式文件的时候是否需要将对应的所有字段传入：按理说传入部分即可，但是实际测试中必须要传入所有字段（即使根本用不到或是会被覆盖掉，例如自增的id，默认为当前时间的time，会被覆盖的createby，updateby），后续对此处需加以思考</p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/cn/bloodborne/" data-toggle="tooltip" data-placement="top" title="白金/通关血源诅咒后的一点杂谈">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/cn/permission/" data-toggle="tooltip" data-placement="top" title="cookie、session、token对比">Next Post &rarr;</a>
+            <a href="/cn/cutLeaf/" data-toggle="tooltip" data-placement="top" title="剪枝相关的知识">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -549,7 +541,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=jwt-token相关&body=Hi,I found this website and thought you might like it https://lsk12345.github.io/cn/jwt/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=类图对应建立数据库的一点心得&body=Hi,I found this website and thought you might like it https://lsk12345.github.io/cn/database/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -584,7 +576,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Tue Sep 28 2021 19:29:19 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Tue Oct 19 2021 00:38:56 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -660,9 +652,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#后端" title="后端">后端</a>
+            <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
             
-            <a class="tag" href="/tags/#权限验证" title="权限验证">权限验证</a>
+            <a class="tag" href="/tags/#后端" title="后端">后端</a>
             
           </div>
         </section>
