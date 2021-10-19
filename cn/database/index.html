@@ -247,28 +247,6 @@
           
           
           <li>
-            <a href="/archive/">
-              
-              归档
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/about/">
               
               关于
@@ -280,9 +258,31 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/tags/">
               
               标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
               
               
             </a>
@@ -406,11 +406,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
+              Estimated Reading Time <span class="post-count">2</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">498</span> In Total
+              Words <span class="post-count">533</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -484,11 +484,16 @@
 <p>6.写mapper文件的时候不要返回Object，写具体的List&lt;Map&lt;String,Object&gt;&gt;</p>
 <p>待解决的问题：</p>
 <p>传入json格式文件的时候是否需要将对应的所有字段传入：按理说传入部分即可，但是实际测试中必须要传入所有字段（即使根本用不到或是会被覆盖掉，例如自增的id，默认为当前时间的time，会被覆盖的createby，updateby），后续对此处需加以思考</p>
+<p>解决方案：新增和修改都要使用insert/updateselective 这样就不会传空值进数据库了 而是都是默认值</p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/updatepic/" data-toggle="tooltip" data-placement="top" title="文件上传和@RequestBody相斥的问题">&larr; Previous Post</a>
+          </li>
           
           
           <li class="next">
