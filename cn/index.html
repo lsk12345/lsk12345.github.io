@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/categories/">
               
-              标签
+              分类
               
               
             </a>
@@ -280,9 +280,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/tags/">
               
-              分类
+              标签
               
               
             </a>
@@ -478,6 +478,86 @@
   <!-- top end -->
   
 
+  <a href="/cn/concurrentModificationException/">
+    <h2 class="post-title">
+      list的for遍历remove报错ConcurrentModificationException
+    </h2>
+    <h3 class="post-subtitle">
+      小小的一个逻辑引出不少知识点
+    </h3>
+    <div class="post-content-preview">
+      今天在写接口的时候遇到了ConcurrentModificationException报错
+没想到引起一连串的问题
+情景是一个学生选课功能，我想让返回的list数据有个优先级
+最优先展示和该学生专业相同的课程安排，再展示和该学生学院相同的课程安排（不同专业），最后展示其他学院的课程安排，有一点服务推荐的味道
+想了一下用sql语句大概率是搞不成的，所以决定直接把数据拉出来自己排序：
+首先是获取......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Last Aping on
+    2021-11-16
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#后端" title="后端">后端</a>
+    
+    <a href="/tags/#java" title="java">java</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/database2/">
+    <h2 class="post-title">
+      数据库设计和后端逻辑的一点小笔记
+    </h2>
+    <h3 class="post-subtitle">
+      就写逻辑过程中的一点笔记
+    </h3>
+    <div class="post-content-preview">
+      这周在做课表接口的时候发现了很多漏洞和数据库设计的不合理，由于影响不大故不再回滚重构了：
+1.逻辑不合理
+一个课程安排（老师-课程）除了对应多个时间段，也可以对应多个教室。
+打个比方：一节课在周一1-2节上或周二1-2节上，虽然是同一个老师、同一个课程，但不同时间的两节课教室也可以不同
+所以数据库中教室不应该是courseTeacher的字段，而是时间段（courseTime)表中的字段
+但......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Last Aping on
+    2021-11-13
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#后端" title="后端">后端</a>
+    
+    <a href="/tags/#数据库" title="数据库">数据库</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/updatepic/">
     <h2 class="post-title">
       文件上传和@RequestBody相斥的问题
@@ -533,9 +613,9 @@
   </p>
   <div class="tags">
     
-    <a href="/tags/#数据库" title="数据库">数据库</a>
-    
     <a href="/tags/#后端" title="后端">后端</a>
+    
+    <a href="/tags/#数据库" title="数据库">数据库</a>
     
   </div>
   
@@ -572,9 +652,9 @@
   </p>
   <div class="tags">
     
-    <a href="/tags/#算法分析与设计" title="算法分析与设计">算法分析与设计</a>
-    
     <a href="/tags/#杂谈" title="杂谈">杂谈</a>
+    
+    <a href="/tags/#算法分析与设计" title="算法分析与设计">算法分析与设计</a>
     
   </div>
   
@@ -657,9 +737,9 @@
   </p>
   <div class="tags">
     
-    <a href="/tags/#杂谈" title="杂谈">杂谈</a>
-    
     <a href="/tags/#游戏" title="游戏">游戏</a>
+    
+    <a href="/tags/#杂谈" title="杂谈">杂谈</a>
     
   </div>
   
@@ -780,94 +860,6 @@ cookie由服务器生成，发送给浏览器，浏览器把cookie以kv形式保
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/english1/">
-    <h2 class="post-title">
-      六级刷分计划1
-    </h2>
-    <h3 class="post-subtitle">
-      如题
-    </h3>
-    <div class="post-content-preview">
-      来自Model Test One
-epidemic英 [ˌepɪˈdemɪk] 美 [ˌepɪˈdemɪk]
-
-n. 传染病；流行病；风尚等的流行
-adj. 流行的；传染性的
-
-antiviral英 [ˌæntiˈvaɪrəl] 美 [ˌæntiˈvaɪrəl]
-
-adj. 抗病毒的；抗滤过性病原体的
-n. 抗病毒物质（等于antidote）
-
-numeracy英 [ˈnjuːmərəsi]......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Last Aping on
-    2021-09-23
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#英语" title="英语">英语</a>
-    
-    <a href="/tags/#单词" title="单词">单词</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/list/">
-    <h2 class="post-title">
-      不同语言列表的底层存储结构
-    </h2>
-    <h3 class="post-subtitle">
-      应数据结构的思考问题进行的资料查阅
-    </h3>
-    <div class="post-content-preview">
-      
-列表的存储结构分为两种：链式和线性，针对java、cpp和python三种语言有各自的list容器（集合）
-
-Cpp
-array
-Arrays are fixed-size sequence containers: they hold a specific number of elements ordered in a strict linear sequence.
-固定数组线性表
-lis......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Last Aping on
-    2021-09-22
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#数据结构" title="数据结构">数据结构</a>
-    
-    <a href="/tags/#算法设计" title="算法设计">算法设计</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -916,14 +908,6 @@ lis......
   <div class="tags">
     
     
-    <a href="/tags/#算法分析与设计" title="算法分析与设计" rel="3">算法分析与设计</a>
-    
-    
-    
-    <a href="/tags/#杂谈" title="杂谈" rel="2">杂谈</a>
-    
-    
-    
     <a href="/tags/#blog" title="blog" rel="1">blog</a>
     
     
@@ -932,11 +916,23 @@ lis......
     
     
     
-    <a href="/tags/#数据库" title="数据库" rel="1">数据库</a>
+    <a href="/tags/#杂谈" title="杂谈" rel="2">杂谈</a>
     
     
     
-    <a href="/tags/#后端" title="后端" rel="5">后端</a>
+    <a href="/tags/#后端" title="后端" rel="7">后端</a>
+    
+    
+    
+    <a href="/tags/#java" title="java" rel="1">java</a>
+    
+    
+    
+    <a href="/tags/#算法分析与设计" title="算法分析与设计" rel="3">算法分析与设计</a>
+    
+    
+    
+    <a href="/tags/#数据库" title="数据库" rel="2">数据库</a>
     
     
     
@@ -1030,6 +1026,14 @@ lis......
 <div class="widget">
   <ul>
     
+    <a href="concurrentModificationException/">
+      <li>list的for遍历remove报错ConcurrentModificationException</li>
+    </a>
+    
+    <a href="database2/">
+      <li>数据库设计和后端逻辑的一点小笔记</li>
+    </a>
+    
     <a href="updatepic/">
       <li>文件上传和@RequestBody相斥的问题</li>
     </a>
@@ -1040,14 +1044,6 @@ lis......
     
     <a href="cutLeaf/">
       <li>剪枝相关的知识</li>
-    </a>
-    
-    <a href="grid/">
-      <li>利用回溯法求解填字游戏问题</li>
-    </a>
-    
-    <a href="bloodborne/">
-      <li>白金/通关血源诅咒后的一点杂谈</li>
     </a>
     
   </ul>
@@ -1074,7 +1070,7 @@ lis......
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/10/">October 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/09/">September 2021</a><span class="archive-list-count">8</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/10/">October 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/09/">September 2021</a><span class="archive-list-count">8</span></li></ul>
 </div>
 
 
@@ -1086,10 +1082,6 @@ lis......
 <div class="widget">
   <ul>
     
-    <a href="/categories/#课堂任务">
-      <li>课堂任务</li>
-    </a>
-    
     <a href="/categories/#日常">
       <li>日常</li>
     </a>
@@ -1100,6 +1092,10 @@ lis......
     
     <a href="/categories/#课外学习">
       <li>课外学习</li>
+    </a>
+    
+    <a href="/categories/#课堂任务">
+      <li>课堂任务</li>
     </a>
     
   </ul>
