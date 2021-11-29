@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/tags/">
               
-              归档
+              标签
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -280,9 +280,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              标签
+              关于
               
               
             </a>
@@ -480,7 +480,7 @@
 <p>解决方案首先可以将@RequestBody去掉，但是这样就存在接收不了json格式文件的问题，不太友好。</p>
 <p>所以最好的办法是将上传接口独立</p>
 <p>如此便要考虑数据库的逻辑了，update还好，但是insert就是两步走，先接收json然后把自增的id返回前端，前端再发送图片过来，再更新这条记录的图片路径</p>
-<p>mybatis获取自增id的方法：添加这句话就会自动注入到对象里去了，useGeneratedKeys=“true” keyProperty=“id” keyColumn=“id”</p>
+<p>mybatis获取自增id的方法：添加这句话就会自动注入到对象里去了，useGeneratedKeys=”true” keyProperty=”id” keyColumn=”id”</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44462398/article/details/110673762">(9条消息) insert语句返回自增主键详解-mybatis_搬代码的小松鼠的博客-CSDN博客</a></p>
 <p>但是两步走过程显然存在并发问题，后续需要学习解决方法</p>
 <p><strong>双ResponseBody也会互斥，如果要传两个json实体类，就需要自定义一个类专门用于数据接收</strong></p>
@@ -1201,5 +1201,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

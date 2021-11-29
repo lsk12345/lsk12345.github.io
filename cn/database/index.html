@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/tags/">
               
-              归档
+              标签
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -280,9 +280,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              标签
+              关于
               
               
             </a>
@@ -389,9 +389,9 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
-              
               <a class="tag" href="/tags/#后端" title="后端">后端</a>
+              
+              <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
               
             </div>
             <h1>类图对应建立数据库的一点心得</h1>
@@ -406,11 +406,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
+              Estimated Reading Time <span class="post-count">1</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">533</span> In Total
+              Words <span class="post-count">390</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -481,7 +481,7 @@
 <p>方案2 尽量把所有sql语句写在同一个mapper.xml中，但是带来的问题就是不好管理service层需要调用的查表方法</p>
 <p>4.返回list的应该添加page和begin来分页，注意is_delete要=0，后续可以考虑封装，而不是写在sql语句里，出现多个返回结果要注意distinct</p>
 <p>5.删除的时候应当注意将依赖该表的表里的数据全部删掉，这样连表的时候只需要判断最上层的is_delete了</p>
-<p>6.写mapper文件的时候不要返回Object，写具体的List&lt;Map&lt;String,Object&gt;&gt;</p>
+<p>6.写mapper文件的时候不要返回Object，写具体的List<Map<String,Object>&gt;</Map<String,Object></p>
 <p>待解决的问题：</p>
 <p>传入json格式文件的时候是否需要将对应的所有字段传入：按理说传入部分即可，但是实际测试中必须要传入所有字段（即使根本用不到或是会被覆盖掉，例如自增的id，默认为当前时间的time，会被覆盖的createby，updateby），后续对此处需加以思考</p>
 <p>解决方案：新增和修改都要使用insert/updateselective 这样就不会传空值进数据库了 而是都是默认值</p>
@@ -657,9 +657,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
-            
             <a class="tag" href="/tags/#后端" title="后端">后端</a>
+            
+            <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
             
           </div>
         </section>
@@ -1202,5 +1202,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

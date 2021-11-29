@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/tags/">
               
-              归档
+              标签
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -280,9 +280,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              标签
+              关于
               
               
             </a>
@@ -410,7 +410,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">641</span> In Total
+              Words <span class="post-count">630</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -475,36 +475,25 @@
         <blockquote>
 <p>列表的存储结构分为两种：链式和线性，针对java、cpp和python三种语言有各自的list容器（集合）</p>
 </blockquote>
-<h2 id="Cpp">Cpp</h2>
-<h3 id="array">array</h3>
-<p>Arrays are fixed-size sequence containers: they hold a specific number of elements ordered in a strict linear sequence.</p>
+<h2 id="Cpp"><a href="#Cpp" class="headerlink" title="Cpp"></a>Cpp</h2><h3 id="array"><a href="#array" class="headerlink" title="array"></a>array</h3><p>Arrays are fixed-size sequence containers: they hold a specific number of elements ordered in a strict linear sequence.</p>
 <p>固定数组线性表</p>
-<h3 id="list">list</h3>
-<p>Lists are sequence containers that allow constant time insert and erase operations anywhere within the sequence, and iteration in both directions.</p>
+<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><p>Lists are sequence containers that allow constant time insert and erase operations anywhere within the sequence, and iteration in both directions.</p>
 <p>List containers are implemented as doubly-linked lists; Doubly linked lists can store each of the elements they contain in different and unrelated storage locations. The ordering is kept internally by the association to each element of a link to the element preceding it and a link to the element following it.</p>
 <p>双向链表</p>
-<h3 id="forward-list">forward_list</h3>
-<p>Forward lists are sequence containers that allow constant time insert and erase operations anywhere within the sequence.</p>
+<h3 id="forward-list"><a href="#forward-list" class="headerlink" title="forward_list"></a>forward_list</h3><p>Forward lists are sequence containers that allow constant time insert and erase operations anywhere within the sequence.</p>
 <p>Forward lists are implemented as singly-linked lists; Singly linked lists can store each of the elements they contain in different and unrelated storage locations. The ordering is kept by the association to each element of a link to the next element in the sequence.</p>
 <p>单项链表</p>
-<h3 id="vector">vector</h3>
-<p>Vectors are sequence containers representing arrays that can change in size.</p>
+<h3 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h3><p>Vectors are sequence containers representing arrays that can change in size.</p>
 <p>Just like arrays, vectors use contiguous storage locations for their elements, which means that their elements can also be accessed using offsets on regular pointers to its elements, and just as efficiently as in arrays. But unlike arrays, their size can change dynamically, with their storage being handled automatically by the container.</p>
 <p>动态数组线性表</p>
-<h2 id="Java">Java</h2>
-<h3 id="ArrayList">ArrayList</h3>
-<p>Resizable-array implementation of the List interface. Implements all optional list operations, and permits all elements, including null. In addition to implementing the List interface, this class provides methods to manipulate the size of the array that is used internally to store the list. (This class is roughly equivalent to Vector, except that it is unsynchronized.)</p>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>Resizable-array implementation of the List interface. Implements all optional list operations, and permits all elements, including null. In addition to implementing the List interface, this class provides methods to manipulate the size of the array that is used internally to store the list. (This class is roughly equivalent to Vector, except that it is unsynchronized.)</p>
 <p>动态数组线性表</p>
-<h3 id="LinkedList">LinkedList</h3>
-<p>Doubly-linked list implementation of the List and Deque interfaces. Implements all optional list operations, and permits all elements (including null).</p>
+<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><p>Doubly-linked list implementation of the List and Deque interfaces. Implements all optional list operations, and permits all elements (including null).</p>
 <p>All of the operations perform as could be expected for a doubly-linked list. Operations that index into the list will traverse the list from the beginning or the end, whichever is closer to the specified index.</p>
 <p>双向链表</p>
-<h3 id="Vector">Vector</h3>
-<p>The Vector class implements a growable array of objects. Like an array, it contains components that can be accessed using an integer index. However, the size of a Vector can grow or shrink as needed to accommodate adding and removing items after the Vector has been created.</p>
+<h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h3><p>The Vector class implements a growable array of objects. Like an array, it contains components that can be accessed using an integer index. However, the size of a Vector can grow or shrink as needed to accommodate adding and removing items after the Vector has been created.</p>
 <p>动态数组</p>
-<h2 id="Python">Python</h2>
-<h3 id="List">List</h3>
-<p>A built-in Python sequence. Despite its name it is more akin to an array in other languages than to a linked list since access to elements is O(1).</p>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>A built-in Python sequence. Despite its name it is more akin to an array in other languages than to a linked list since access to elements is O(1).</p>
 <p>动态数组</p>
 <blockquote>
 <p>总结：之前用到比较多的主要是java里的arraylist和python里的list，虽然都打着list的旗号，但实际上都是线性存储结构，使用动态数组实现。</p>
@@ -1227,5 +1216,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/tags/">
               
-              ARCHIVES
+              TAGS
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
               
               
             </a>
@@ -280,9 +280,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              TAGS
+              ABOUT
               
               
             </a>
@@ -490,9 +490,7 @@
       之前学习的springboot集成其他框架快速开发相关的知识
     </h3>
     <div class="post-content-preview">
-      快速开始
-依赖添加
-12345678910111213141516171819202122&lt;!--集成mysql--&gt;&lt;dependency&gt;    &lt;groupId&gt;mysql&lt;/groupId&gt;    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;&lt;/dependen......
+      快速开始依赖添加12345678910111213141516171819202122&lt;!--集成mysql--&gt;&lt;dependency&gt;    &lt;groupId&gt;mysql&lt;/groupId&gt;    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;&lt;/dependency......
     </div>
   </a>
   
@@ -521,9 +519,48 @@
   <!-- top end -->
   
 
+  <a href="/cn/redis/">
+    <h2 class="post-title">
+      redis相关知识（持续更新）
+    </h2>
+    <h3 class="post-subtitle">
+      如题
+    </h3>
+    <div class="post-content-preview">
+      今天算是第一次正式在项目里使用了redis去优化数据访问问题。
+面向的功能就是利用存储jwtoken到redis里来户管理和防止重复登陆的问题。
+用户管理的话比如强制下线或者冻结账号等功能肯定是要设计到数据库的，不能单纯的使用token一次性令牌。
+就使用上还是比较简单，就是一个put和get以及设置缓存时间
+12redisTemplate.opsForValue().set(userDB.......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Last Aping on
+    2021-11-28
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#后端" title="后端">后端</a>
+    
+    <a href="/tags/#redis" title="redis">redis</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/persona/">
     <h2 class="post-title">
-      persona5R通过后的一点杂谈
+      persona5R通关后的一点杂谈
     </h2>
     <h3 class="post-subtitle">
       如题
@@ -609,12 +646,9 @@
       就写逻辑过程中的一点笔记
     </h3>
     <div class="post-content-preview">
-      这周在做课表接口的时候发现了很多漏洞和数据库设计的不合理，由于影响不大故不再回滚重构了：
-1.逻辑不合理
-一个课程安排（老师-课程）除了对应多个时间段，也可以对应多个教室。
-打个比方：一节课在周一1-2节上或周二1-2节上，虽然是同一个老师、同一个课程，但不同时间的两节课教室也可以不同
-所以数据库中教室不应该是courseTeacher的字段，而是时间段（courseTime)表中的字段
-但......
+      这周在做课表接口的时候发现了很多漏洞和数据库设计的不合理，由于影响不大故不再回滚重构了：1.逻辑不合理
+一个课程安排（老师-课程）除了对应多个时间段，也可以对应多个教室。打个比方：一节课在周一1-2节上或周二1-2节上，虽然是同一个老师、同一个课程，但不同时间的两节课教室也可以不同
+所以数据库中教室不应该是courseTeacher的字段，而是时间段（courseTime)表中的字段但这里假......
     </div>
   </a>
   
@@ -624,9 +658,9 @@
   </p>
   <div class="tags">
     
-    <a href="/tags/#数据库" title="数据库">数据库</a>
-    
     <a href="/tags/#后端" title="后端">后端</a>
+    
+    <a href="/tags/#数据库" title="数据库">数据库</a>
     
   </div>
   
@@ -696,9 +730,9 @@
   </p>
   <div class="tags">
     
-    <a href="/tags/#数据库" title="数据库">数据库</a>
-    
     <a href="/tags/#后端" title="后端">后端</a>
+    
+    <a href="/tags/#数据库" title="数据库">数据库</a>
     
   </div>
   
@@ -760,14 +794,11 @@
       算法分析与设计实验2
     </h3>
     <div class="post-content-preview">
-      题目
-在3*3个方格的方阵中要填入数字1-10的某9个数字，每个方格填一个整数，使所有相邻两个方格内的两个整数之和为素数。编写一个实验程序，求出所有满足这个要求的数字填法。
+      题目在3*3个方格的方阵中要填入数字1-10的某9个数字，每个方格填一个整数，使所有相邻两个方格内的两个整数之和为素数。编写一个实验程序，求出所有满足这个要求的数字填法。
 输入：一个3*3的方格方阵。
 输出：出所有满足这个要求的数字填法。
-思路
-整体比较简单，直接全排列然后寻找符合条件的结果或者dfs每一步都判断新填入整数是否符合条件
-代码如下
-1234567891011121314151......
+思路整体比较简单，直接全排列然后寻找符合条件的结果或者dfs每一步都判断新填入整数是否符合条件
+代码如下1234567891011121314151617......
     </div>
   </a>
   
@@ -802,15 +833,11 @@
       如题
     </h3>
     <div class="post-content-preview">
-      ​		不知道从何说起，对于这么一个6年前的老游戏，也算是魂系老玩家补全倒数第二片拼图（还有个恶魔之魂）的一点点感想吧。
-​		通关具体时间忘记看了，包含dlc、迷宫啥的感觉大概也就50小时左右吧，通关了并且白金（还差第二个结局成就后续补上，只能说自己手贱偷吃了三条脐带，现在得多跑一个周目了）
-​		（已更新）
-​		
-​		也是谈一点我自己的理解，聊的东西不一定对，图一乐就好。
-
-难度
-
-​......
+      ​        不知道从何说起，对于这么一个6年前的老游戏，也算是魂系老玩家补全倒数第二片拼图（还有个恶魔之魂）的一点点感想吧。
+​        通关具体时间忘记看了，包含dlc、迷宫啥的感觉大概也就50小时左右吧，通关了并且白金（还差第二个结局成就后续补上，只能说自己手贱偷吃了三条脐带，现在得多跑一个周目了）
+​        （已更新）
+​        
+​        也是谈一......
     </div>
   </a>
   
@@ -823,42 +850,6 @@
     <a href="/tags/#游戏" title="游戏">游戏</a>
     
     <a href="/tags/#杂谈" title="杂谈">杂谈</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/jwt/">
-    <h2 class="post-title">
-      jwt-token相关
-    </h2>
-    <h3 class="post-subtitle">
-      通过jwt实现token验证用户身份相关知识
-    </h3>
-    <div class="post-content-preview">
-      ​	前端通过Web表单将自己的用户名和密码发送到后端的接口，这一过程一般是一个HTTP POST请求。建议的方式是通过SSL加密传输(https协议)。
-​	后端核对用户名和密码后，将用户的id等信息作为JWTpayload(负载)，将其与头部分别进行Base64编码拼接后签名，形成一个JWT(Token)。形成的JWT就是一个形同111.zzz.xxx的字符串(head.payload.s......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Last Aping on
-    2021-09-28
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#后端" title="后端">后端</a>
-    
-    <a href="/tags/#权限验证" title="权限验证">权限验证</a>
     
   </div>
   
@@ -918,6 +909,14 @@
     
     
     
+    <a href="/tags/#后端" title="后端" rel="8">后端</a>
+    
+    
+    
+    <a href="/tags/#java" title="java" rel="1">java</a>
+    
+    
+    
     <a href="/tags/#游戏" title="游戏" rel="2">游戏</a>
     
     
@@ -926,19 +925,11 @@
     
     
     
-    <a href="/tags/#数据库" title="数据库" rel="2">数据库</a>
-    
-    
-    
-    <a href="/tags/#后端" title="后端" rel="7">后端</a>
-    
-    
-    
-    <a href="/tags/#java" title="java" rel="1">java</a>
-    
-    
-    
     <a href="/tags/#算法分析与设计" title="算法分析与设计" rel="3">算法分析与设计</a>
+    
+    
+    
+    <a href="/tags/#数据库" title="数据库" rel="2">数据库</a>
     
     
     
@@ -950,6 +941,14 @@
     
     
     
+    <a href="/tags/#实验报告" title="实验报告" rel="3">实验报告</a>
+    
+    
+    
+    <a href="/tags/#权限验证" title="权限验证" rel="2">权限验证</a>
+    
+    
+    
     <a href="/tags/#数据结构" title="数据结构" rel="1">数据结构</a>
     
     
@@ -958,11 +957,7 @@
     
     
     
-    <a href="/tags/#实验报告" title="实验报告" rel="3">实验报告</a>
-    
-    
-    
-    <a href="/tags/#权限验证" title="权限验证" rel="2">权限验证</a>
+    <a href="/tags/#redis" title="redis" rel="1">redis</a>
     
     
     
@@ -1032,8 +1027,12 @@
 <div class="widget">
   <ul>
     
+    <a href="cn/redis/">
+      <li>redis相关知识（持续更新）</li>
+    </a>
+    
     <a href="cn/persona/">
-      <li>persona5R通过后的一点杂谈</li>
+      <li>persona5R通关后的一点杂谈</li>
     </a>
     
     <a href="cn/concurrentModificationException/">
@@ -1046,10 +1045,6 @@
     
     <a href="cn/updatepic/">
       <li>文件上传和@RequestBody相斥的问题</li>
-    </a>
-    
-    <a href="cn/database/">
-      <li>类图对应建立数据库的一点心得</li>
     </a>
     
   </ul>
@@ -1076,7 +1071,7 @@
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/11/">November 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/10/">October 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/09/">September 2021</a><span class="archive-list-count">8</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/11/">November 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/10/">October 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/09/">September 2021</a><span class="archive-list-count">8</span></li></ul>
 </div>
 
 
@@ -1092,12 +1087,12 @@
       <li>日常</li>
     </a>
     
-    <a href="/categories/#游戏">
-      <li>游戏</li>
-    </a>
-    
     <a href="/categories/#课外学习">
       <li>课外学习</li>
+    </a>
+    
+    <a href="/categories/#游戏">
+      <li>游戏</li>
     </a>
     
     <a href="/categories/#课堂任务">
@@ -1584,5 +1579,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

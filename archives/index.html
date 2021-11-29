@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/tags/">
               
-              ARCHIVES
+              TAGS
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
               
               
             </a>
@@ -280,9 +280,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              TAGS
+              ABOUT
               
               
             </a>
@@ -484,11 +484,24 @@
         <ul>
           
           <li>
+            11-28
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/redis/" style="color: #0085a1">
+              <span>
+                redis相关知识（持续更新）
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
             11-16
             <i class="fa fa-angle-double-right" aria-hidden="true"></i>
             <a href="/cn/persona/" style="color: #0085a1">
               <span>
-                persona5R通过后的一点杂谈
+                persona5R通关后的一点杂谈
                 
                 -- cn
                 
@@ -739,6 +752,14 @@
     
     
     
+    <a href="/tags/#后端" title="后端" rel="8">后端</a>
+    
+    
+    
+    <a href="/tags/#java" title="java" rel="1">java</a>
+    
+    
+    
     <a href="/tags/#游戏" title="游戏" rel="2">游戏</a>
     
     
@@ -747,19 +768,11 @@
     
     
     
-    <a href="/tags/#数据库" title="数据库" rel="2">数据库</a>
-    
-    
-    
-    <a href="/tags/#后端" title="后端" rel="7">后端</a>
-    
-    
-    
-    <a href="/tags/#java" title="java" rel="1">java</a>
-    
-    
-    
     <a href="/tags/#算法分析与设计" title="算法分析与设计" rel="3">算法分析与设计</a>
+    
+    
+    
+    <a href="/tags/#数据库" title="数据库" rel="2">数据库</a>
     
     
     
@@ -771,6 +784,14 @@
     
     
     
+    <a href="/tags/#实验报告" title="实验报告" rel="3">实验报告</a>
+    
+    
+    
+    <a href="/tags/#权限验证" title="权限验证" rel="2">权限验证</a>
+    
+    
+    
     <a href="/tags/#数据结构" title="数据结构" rel="1">数据结构</a>
     
     
@@ -779,11 +800,7 @@
     
     
     
-    <a href="/tags/#实验报告" title="实验报告" rel="3">实验报告</a>
-    
-    
-    
-    <a href="/tags/#权限验证" title="权限验证" rel="2">权限验证</a>
+    <a href="/tags/#redis" title="redis" rel="1">redis</a>
     
     
     
@@ -853,8 +870,12 @@
 <div class="widget">
   <ul>
     
+    <a href="../cn/redis/">
+      <li>redis相关知识（持续更新）</li>
+    </a>
+    
     <a href="../cn/persona/">
-      <li>persona5R通过后的一点杂谈</li>
+      <li>persona5R通关后的一点杂谈</li>
     </a>
     
     <a href="../cn/concurrentModificationException/">
@@ -867,10 +888,6 @@
     
     <a href="../cn/updatepic/">
       <li>文件上传和@RequestBody相斥的问题</li>
-    </a>
-    
-    <a href="../cn/database/">
-      <li>类图对应建立数据库的一点心得</li>
     </a>
     
   </ul>
@@ -897,7 +914,7 @@
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="2021/11/">November 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="2021/10/">October 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="2021/09/">September 2021</a><span class="archive-list-count">8</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="2021/11/">November 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="2021/10/">October 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="2021/09/">September 2021</a><span class="archive-list-count">8</span></li></ul>
 </div>
 
 
@@ -913,12 +930,12 @@
       <li>日常</li>
     </a>
     
-    <a href="/categories/#游戏">
-      <li>游戏</li>
-    </a>
-    
     <a href="/categories/#课外学习">
       <li>课外学习</li>
+    </a>
+    
+    <a href="/categories/#游戏">
+      <li>游戏</li>
     </a>
     
     <a href="/categories/#课堂任务">
@@ -1405,5 +1422,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

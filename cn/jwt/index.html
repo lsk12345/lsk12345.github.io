@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/tags/">
               
-              归档
+              标签
               
               
             </a>
@@ -269,9 +269,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -280,9 +280,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/about/">
               
-              标签
+              关于
               
               
             </a>
@@ -472,12 +472,12 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p>​	前端通过Web表单将自己的用户名和密码发送到后端的接口，这一过程一般是一个HTTP POST请求。建议的方式是通过SSL加密传输(https协议)。</p>
-<p>​	后端核对用户名和密码后，将用户的id等信息作为JWTpayload(负载)，将其与头部分别进行Base64编码拼接后签名，形成一个JWT(Token)。形成的JWT就是一个形同111.zzz.xxx的字符串(head.payload.signature)</p>
-<p>​	后端将JWT字符串作为登陆成功的返回结果返回给前端，前端可以将返回的结果保存在本地或服务器上，退出登录时前端删除保存的JWT即可。</p>
-<p>​	前端在每次请求时将JWT放入HTTP Header中的Authorization位。(即token放入header)</p>
-<p>​	后端检查是否存在。若存在检验JWT的有效性。例如，检查签名是否正确；检查签名是否过期；检查Token的接收方是否是自己（可选）</p>
-<p>​	验证通过后后端使用JWT中包含的用户信息进行其他逻辑操作，返回相应结果</p>
+        <p>​    前端通过Web表单将自己的用户名和密码发送到后端的接口，这一过程一般是一个HTTP POST请求。建议的方式是通过SSL加密传输(https协议)。</p>
+<p>​    后端核对用户名和密码后，将用户的id等信息作为JWTpayload(负载)，将其与头部分别进行Base64编码拼接后签名，形成一个JWT(Token)。形成的JWT就是一个形同111.zzz.xxx的字符串(head.payload.signature)</p>
+<p>​    后端将JWT字符串作为登陆成功的返回结果返回给前端，前端可以将返回的结果保存在本地或服务器上，退出登录时前端删除保存的JWT即可。</p>
+<p>​    前端在每次请求时将JWT放入HTTP Header中的Authorization位。(即token放入header)</p>
+<p>​    后端检查是否存在。若存在检验JWT的有效性。例如，检查签名是否正确；检查签名是否过期；检查Token的接收方是否是自己（可选）</p>
+<p>​    验证通过后后端使用JWT中包含的用户信息进行其他逻辑操作，返回相应结果</p>
 <p>1.标头（Header）：令牌类型（JWT）和所使用的签名算法</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;alg&quot;</span>:<span class="string">&quot;HS256&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;typ&quot;</span>:<span class="string">&quot;JWT&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2.有效负载（payload）：有关实体和其他数据的声明</p>
@@ -1205,5 +1205,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
